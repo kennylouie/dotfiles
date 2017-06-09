@@ -23,4 +23,4 @@ I like using tmux as it allows my amazon aws servers to keep running while disco
 
 ## discussion
 
-The script is customizable and allows for easy server setup (in my case) when working with cloud servers, e.g. ec2. The script works best on a new system install; it is yet to be updated to check whether there are already existing vim colours. It might give an error!
+The script is customizable and allows for easy server setup (in my case) when working with cloud servers, e.g. ec2. The script works best on a new system install.
