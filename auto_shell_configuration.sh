@@ -53,7 +53,7 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=Exbxcxdxexehfhabahacad
 #
-source ~/.shell_config.k
+source ~/.usrrc
 EOF
 
 # tmux configuration
