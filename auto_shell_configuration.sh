@@ -5,7 +5,7 @@
 # this script will create a personal bashrc, zshrc, tmux config, and vimrc for initial amazon ec2 ubuntu server
 # personal bashrc configuration
 # you can add all your favorite aliases
-cat > ~/usrrc <<EOF
+cat > ~/.usrrc <<EOF
 cd() { builtin cd "\$@" && ls -alrt; }
 alias tmux="tmux -2"
 alias ta="tmux attach -t"
@@ -13,14 +13,13 @@ alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -t"
 function tkillall() {
-	session=$(tmux ls | awk '{print $1}')
-	for sessions in $sessions
+	session=\$(tmux ls | awk '{print \$1}')
+	for sessions in \$sessions
 	do
 		tmux kill-session -t $sessions
 	done
 }
 EOF
-mv ~/usrrc ~/.usrrc #haven't checked it out yet, but cannot save directly as a dotfile using above cat command
 echo "source ~/.usrrc" >> ~/.bashrc #either this or bash_profile works
 echo "source ~/.usrrc" >> ~/.bash_profile
 source ~/.bashrc
@@ -29,7 +28,7 @@ source ~/.bash_profile
 # zshrc
 
 #creating our zshrc files for within tmux
-cat > ~/zshrc <<EOF
+cat > ~/.zshrc <<EOF
 # general #
 # 1. enabling 256 color in terminal
 export TERM="xterm-256color" 
@@ -40,8 +39,8 @@ setopt CORRECT
 #
 # 4. vim as editor
 export EDITOR="vim"
-export USE_EDITOR=$EDITOR
-export VISUAL=$EDITOR
+export USE_EDITOR=\$EDITOR
+export VISUAL=\$EDITOR
 #
 # 5. ls -al on every cd
 function chpwd() {
@@ -56,10 +55,9 @@ export LSCOLORS=Exbxcxdxexehfhabahacad
 #
 source ~/.shell_config.k
 EOF
-mv ~/zshrc ~/.zshrc
 
 # tmux configuration
-cat > ~/tmux.conf <<EOF
+cat > ~/.tmux.conf <<EOF
 ## General
 
 set-option -g default-shell /bin/zsh
@@ -192,13 +190,12 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-processes 'ssh'
 run-shell ~/clone/path/resurrect.tmux
 EOF
-mv ~/tmux.conf ~/.tmux.conf
 
 # saving tmux states
 git clone https://github.com/tmux-plugins/tmux-resurrect ~/clone/path
 
 # vimrc
-cat > ~/vimrc <<EOF
+cat > ~/.vimrc <<EOF
 "general
 syntax enable
 
@@ -252,11 +249,11 @@ nnoremap <Leader>3 :set hlsearch!<CR>
 
 "nav shortkeys
 
-nnoremap <S-L> <S-$>
+nnoremap <S-L> <S-\$>
 nnoremap H 0
-vnoremap <S-L> <S-$>
+vnoremap <S-L> <S-\$>
 vnoremap H 0
-onoremap <S-L> <S-$>
+onoremap <S-L> <S-\$>
 onoremap H 0
 
 "making tab escape
@@ -326,7 +323,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 "let g:netrw_winsize = 25
 let g:netrw_altv = 1
-let g:netrw_list_hide='.*\.swp$'
+let g:netrw_list_hide='.*\.swp\$'
 
 "cycling through buffers
 
@@ -347,7 +344,6 @@ nnoremap <C-w>> :vertical resize +5<CR>
 "buffer listing
 nnoremap <Leader>ls :ls<CR>
 EOF
-mv ~/vimrc ~/.vimrc
 
 # vim colors
 git clone https://github.com/morhetz/gruvbox.git ~/.vim #you can add your favorite colours
