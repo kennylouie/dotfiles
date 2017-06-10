@@ -1,6 +1,8 @@
 # dotfiles
 editable bash script to setup custom bashrc, zshrc, vimrc, and tmux.config scripts
 
+![alt text](https://user-images.githubusercontent.com/29260348/26998182-92ca9b8c-4d35-11e7-8ca4-f7f8b529cc08.png)
+
 ## background
 
 This repo has a single bash script that I have used over the years to help with automating and quickly setupping up a new linux setup. This was most useful when working with server side machines, e.g. amazon aws ec2. Simply just p/scp the script over and run.
