@@ -1,10 +1,25 @@
 #!/bin/bash
 
-## This is shell script that will add my flavour of tmux, zsh, and vim config.
+## This is shell script that will add my flavour of tmux and vim config.
 ## This script is meant as a template for your own customizations.
 
-cat > ~/.usrrc <<EOF
-cd() { builtin cd "\$@" && ls -alrt; }
+## Take in a username for naming of dotfiles.
+read -p "Please type in a username: " username
+read -p "Your username is $username. Is this correct? [Type YES in uppercase] " confirmation
+
+if [ "$confirmation" != "YES" ]
+then
+	exit 1
+fi
+
+## The following will be made into a config file. This is where you can add your own configurations.
+cat > .$username <<EOF
+## This is $username's bashrc configuration
+
+## cd will print out all files in directory
+cd() { builtin cd \$@ && ls -alrt; }
+
+## tmux aliases
 alias tmux="tmux -2"
 alias ta="tmux attach -t"
 alias tnew="tmux new -s"
@@ -17,11 +32,20 @@ function tkillall() {
 		tmux kill-session -t $sessions
 	done
 }
+
+## Other configurations, e.g. git commands
 EOF
-echo "source ~/.usrrc" >> ~/.bashrc #either this or bash_profile works
-echo "source ~/.usrrc" >> ~/.bash_profile
-source ~/.bashrc
-source ~/.bash_profile
+echo -e ".$username created."
+
+read -p "Would you like to add the .$username file to your .bashrc file? [Type YES in uppercase] " addToBashrcResponse
+
+if [ "$addToBashrcResponse" == "YES" ]
+then
+	echo "source .$username" >> /home/$USER/.bashrc 
+	source /home/$USER/.bashrc
+else
+	echo -e "To make this file work, you will need to source the .$username file in your bashrc\nby adding source .$username to the end of your .bashrc file"
+fi
 
 # zshrc
 
