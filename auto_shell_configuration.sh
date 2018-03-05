@@ -51,17 +51,15 @@ fi
 cat > ~/.tmux.conf <<EOF
 ## General
 
-set-option -g default-shell /bin/zsh
 set -g default-terminal "screen-256color"
 set -s escape-time 0
 set -sg repeat-time 600
 set -s quiet on
-set -g mode-keys vi
 
 set -g history-limit 5000
 
-# reload configuration
-bind r source-file ~/.tmux.conf \; display 'tmux resourced!'
+## reload configuration
+bind r source-file /home/$USER/.tmux.conf \; display 'tmux resourced!'
 
 ## display
 
@@ -182,8 +180,8 @@ set -g @resurrect-processes 'ssh'
 run-shell ~/clone/path/resurrect.tmux
 EOF
 
-# saving tmux states
-git clone https://github.com/tmux-plugins/tmux-resurrect ~/clone/path
+## saving tmux states
+git clone https://github.com/tmux-plugins/tmux-resurrect /home/$USER/clone/
 
 # vimrc
 cat > ~/.vimrc <<EOF
@@ -336,11 +334,11 @@ nnoremap <C-w>> :vertical resize +5<CR>
 nnoremap <Leader>ls :ls<CR>
 EOF
 
-# vim status config
-mkdir ~/.vim/bundle
+## vim status config
+mkdir /home/$USER/.vim/bundle
 git clone https://github.com/vim-airline/vim-airline.git ~/.vim/bundle/airline
 
-# vim colors
+## vim colors
 DIRECTORY=$($HOME/.vim/colors)
 git clone https://github.com/morhetz/gruvbox.git ~/tempdl/gruvbox #you can add your favorite colours
 if [ -d $DIRECTORY ]; then
