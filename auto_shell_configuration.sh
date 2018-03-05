@@ -175,17 +175,13 @@ cat > .vimrc <<EOF
 
 "general
 syntax enable
-
 filetype on
 filetype indent on
 filetype plugin on
-
 set background=dark
-
 set encoding=utf8
 set number
 set ruler
-
 set noautowrite
 set noswapfile
 set nowb
@@ -193,7 +189,6 @@ set nobackup
 set nocompatible
 set viminfo='0,:0,<0,@0,f0,/0
 set backspace=indent,eol,start
-
 hi vertsplit ctermfg=238 ctermbg=235
 hi LineNr ctermfg=237
 hi StatusLine ctermfg=235 ctermbg=245
@@ -224,7 +219,6 @@ set showmatch
 nnoremap <Leader>3 :set hlsearch!<CR>
 
 "nav shortkeys
-
 nnoremap <S-L> <S-\$>
 nnoremap H 0
 vnoremap <S-L> <S-\$>
@@ -233,7 +227,6 @@ onoremap <S-L> <S-\$>
 onoremap H 0
 
 "making tab escape
-
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
@@ -241,7 +234,6 @@ inoremap <Tab> <Esc>\`^
 inoremap <Leader><Tab> <Tab>
 
 "netrw
-
 "toggle netrw file explorer
 fun! VexToggle(dir)
 	if exists("t:vex_buf_nr")
@@ -288,7 +280,7 @@ augroup END
 noremap <Leader>f :call VexToggle(getcwd())<CR>
 noremap <Leader>F :call VexToggle("")<CR>
 
-" Change directory to the current buffer when opening files.
+"Change directory to the current buffer when opening files.
 let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 "let g:netrw_winsize = 25
@@ -296,12 +288,10 @@ let g:netrw_altv = 1
 let g:netrw_list_hide='.*\.swp\$'
 
 "cycling through buffers
-
 nnoremap <C-w>H :bprevious<CR>
 nnoremap <C-w>L :bnext<CR>
 
 "cycling through tabs
-
 nnoremap <Leader>H :tabp<CR>
 nnoremap <Leader>L :tabn<CR>
 
