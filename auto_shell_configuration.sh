@@ -29,7 +29,7 @@ function tkillall() {
 	sessions=\$(tmux ls | awk '{print \$1}')
 	for session in \$sessions
 	do
-		tmux kill-session -t $sessions
+		tmux kill-session -t \$sessions
 	done
 }
 
