@@ -48,7 +48,7 @@ else
 fi
 
 ## tmux configuration
-cat > ~/.tmux.conf <<EOF
+cat > .tmux.conf <<EOF
 ## General
 
 set -g default-terminal "screen-256color"
@@ -181,10 +181,10 @@ run-shell ~/clone/path/resurrect.tmux
 EOF
 
 ## saving tmux states
-git clone https://github.com/tmux-plugins/tmux-resurrect /home/$USER/clone/
+git clone https://github.com/tmux-plugins/tmux-resurrect clone
 
 # vimrc
-cat > ~/.vimrc <<EOF
+cat > .vimrc <<EOF
 "general
 syntax enable
 
