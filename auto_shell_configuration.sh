@@ -50,7 +50,6 @@ fi
 ## tmux configuration
 cat > .tmux.conf <<EOF
 ## General
-
 set -g default-terminal "screen-256color"
 set -s escape-time 0
 set -sg repeat-time 600
@@ -62,7 +61,6 @@ set -g history-limit 5000
 bind r source-file /home/$USER/.tmux.conf \; display 'tmux resourced!'
 
 ## display
-
 set -g base-index 1
 setw -g pane-base-index 1
 
@@ -74,23 +72,18 @@ set -g set-titles on
 set -g display-panes-time 800
 set -g display-time 1000
 
-# clear history
-
+## clear history
 bind -n C-l send-keys C-l \; run 'sleep 0.05 && tmux clear-history'
 
-# activity
-
+## activity
 set -g monitor-activity on
 set -g visual-activity off
 
 ##  navigation
-
 # find session
-
 bind C-f command-prompt -p find-session 'switch-client -t %%'
 
 # pane navigation
-
 bind -r h select-pane -L
 bind -r j select-pane -D
 bind -r k select-pane -U
@@ -99,14 +92,12 @@ bind > swap-pane -D
 bind < swap-pane -U
 
 # pane resizing
-
 bind -r H resize-pane -L 2
 bind -r J resize-pane -D 2
 bind -r K resize-pane -U 2
 bind -r L resize-pane -R 2
 
-# window navigation
-
+## window navigation
 unbind n
 unbind p
 bind -r C-h previous-window
@@ -114,12 +105,10 @@ bind -r C-l next-window
 bind Tab last-window
 
 # split panes
-
 bind | split-window -h
 bind - split-window -v
 
 # list choice
-
 bind -t vi-choice h tree-collapse
 bind -t vi-choice l tree-expand
 run -b 'tmux bind -t vi-choice K start-of-list 2> /dev/null'
@@ -129,14 +118,12 @@ bind -t vi-choice L tree-expand-all
 bind -t vi-choice Escape cancel
 
 # edit mode
-
 bind -ct vi-edit H start-of-line
 bind -ct vi-edit L end-of-line
 bind -ct vi-edit q cancel
 bind -ct vi-edit Escape cancel
 
 # copy mode
-
 bind Enter copy-mode
 bind b list-buffers
 bind p paste-buffer
@@ -149,8 +136,7 @@ bind -t vi-copy Escape cancel
 bind -t vi-copy H start-of-line
 bind -t vi-copy L end-of-line
 
-# status line
-
+## status line
 set-option -g status-position bottom
 
 set -g status-bg "#212523"
@@ -173,15 +159,17 @@ setw -g window-status-format         ' #(echo "#{pane_current_command}") '
 setw -g window-status-current-format ' #(echo "#{pane_current_command}") '
 set -g status-right " "
 
-# reloading sessions
-
+## reloading sessions
 set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-processes 'ssh'
-run-shell ~/clone/path/resurrect.tmux
+
+##
+run-shell /home/$USER/$username.tmux.ressurection/path/resurrect.tmux
 EOF
+echo -e ".tmux.conf created."
 
 ## saving tmux states
-git clone https://github.com/tmux-plugins/tmux-resurrect clone
+git clone https://github.com/tmux-plugins/tmux-resurrect $username.tmux.ressurection
 
 # vimrc
 cat > .vimrc <<EOF
