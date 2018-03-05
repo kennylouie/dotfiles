@@ -47,38 +47,7 @@ else
 	echo -e "To make this file work, you will need to source the .$username file in your bashrc\nby adding source .$username to the end of your .bashrc file"
 fi
 
-# zshrc
-
-#creating our zshrc files for within tmux
-cat > ~/.zshrc <<EOF
-# general #
-# 1. enabling 256 color in terminal
-export TERM="xterm-256color" 
-# 2. sanity check for doing rm *
-setopt RM_STAR_WAIT
-# 3. spell check
-setopt CORRECT
-#
-# 4. vim as editor
-export EDITOR="vim"
-export USE_EDITOR=\$EDITOR
-export VISUAL=\$EDITOR
-#
-# 5. ls -al on every cd
-function chpwd() {
-	ls -alrt
-}
-#
-# completion colors
-#
-export CLICOLOR=1
-export GREP_OPTIONS='--color=auto'
-export LSCOLORS=Exbxcxdxexehfhabahacad
-#
-source ~/.usrrc
-EOF
-
-# tmux configuration
+## tmux configuration
 cat > ~/.tmux.conf <<EOF
 ## General
 
