@@ -38,6 +38,7 @@ EOF
 echo -e ".$username created."
 
 ## tmux configuration
+## This is .$username's tmux configuration file.
 cat > .tmux.conf <<EOF
 ## General
 set -g default-terminal "screen-256color"
@@ -154,7 +155,7 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-processes 'ssh'
 
 ##
-run-shell /home/$USER/$username.tmux.ressurection/path/resurrect.tmux
+run-shell /home/$USER/$username.tmux.ressurect/path/resurrect.tmux
 EOF
 echo -e ".tmux.conf created."
 
@@ -324,3 +325,5 @@ then
 else
 	echo -e "To make this file work, you will need to source the .$username file in your bashrc\nby adding source .$username to the end of your .bashrc file"
 fi
+
+echo -e "Finished. Please move all the config files and .$username.tmux.ressurect folder to your home directory."
