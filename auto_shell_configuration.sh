@@ -26,8 +26,8 @@ alias tnew="tmux new -s"
 alias tls="tmux ls"
 alias tkill="tmux kill-session -t"
 function tkillall() {
-	session=\$(tmux ls | awk '{print \$1}')
-	for sessions in \$sessions
+	sessions=\$(tmux ls | awk '{print \$1}')
+	for session in \$sessions
 	do
 		tmux kill-session -t $sessions
 	done
@@ -156,7 +156,7 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-processes 'ssh'
 
 ##
-run-shell /home/$USER/$username.tmux.ressurect/path/resurrect.tmux
+run-shell /home/$USER/$username.tmux.ressurect/resurrect.tmux
 EOF
 echo -e ".tmux.conf created."
 
