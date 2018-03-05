@@ -1,10 +1,8 @@
 #!/bin/bash
 
-#optionally you can add pacman/apt-get commands here to also install packages
+## This is shell script that will add my flavour of tmux, zsh, and vim config.
+## This script is meant as a template for your own customizations.
 
-# this script will create a personal bashrc, zshrc, tmux config, and vimrc for initial amazon ec2 ubuntu server
-# personal bashrc configuration
-# you can add all your favorite aliases
 cat > ~/.usrrc <<EOF
 cd() { builtin cd "\$@" && ls -alrt; }
 alias tmux="tmux -2"
