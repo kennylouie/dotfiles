@@ -168,8 +168,14 @@ run-shell /home/$USER/$username.tmux.ressurection/path/resurrect.tmux
 EOF
 echo -e ".tmux.conf created."
 
-## saving tmux states
-git clone https://github.com/tmux-plugins/tmux-resurrect $username.tmux.ressurection
+## saving tmux states using tmux-ressurection
+## check if the folder already exists
+if [ -d "$username.tmux.ressurect" ]
+then
+  echo -e "$username.tmux.ressurection already exists. Will not be overwritten.\nYou may reclone the repo by checking out tmux-ressurect"
+else
+	git clone https://github.com/tmux-plugins/tmux-resurrect $username.tmux.ressurect
+fi
 
 # vimrc
 cat > .vimrc <<EOF
