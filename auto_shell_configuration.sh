@@ -179,7 +179,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-colorscheme gruvbox
 set background=dark
 
 set encoding=utf8
