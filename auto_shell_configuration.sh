@@ -37,16 +37,6 @@ function tkillall() {
 EOF
 echo -e ".$username created."
 
-read -p "Would you like to add the .$username file to your .bashrc file? [Type YES in uppercase] " addToBashrcResponse
-
-if [ "$addToBashrcResponse" == "YES" ]
-then
-	echo "source .$username" >> /home/$USER/.bashrc 
-	source /home/$USER/.bashrc
-else
-	echo -e "To make this file work, you will need to source the .$username file in your bashrc\nby adding source .$username to the end of your .bashrc file"
-fi
-
 ## tmux configuration
 cat > .tmux.conf <<EOF
 ## General
@@ -179,6 +169,7 @@ fi
 
 ## vimrc
 cat > .vimrc <<EOF
+## This is .username's vim config file.
 "general
 syntax enable
 
@@ -321,3 +312,15 @@ nnoremap <C-w>> :vertical resize +5<CR>
 "buffer listing
 nnoremap <Leader>ls :ls<CR>
 EOF
+echo -e ".vimrc created."
+
+## Closing with sourcing the new .$username file into bashrc
+read -p "Would you like to add the .$username file to your .bashrc file? [Type YES in uppercase] " addToBashrcResponse
+
+if [ "$addToBashrcResponse" == "YES" ]
+then
+	echo "source .$username" >> /home/$USER/.bashrc 
+	source /home/$USER/.bashrc
+else
+	echo -e "To make this file work, you will need to source the .$username file in your bashrc\nby adding source .$username to the end of your .bashrc file"
+fi
