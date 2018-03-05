@@ -38,8 +38,9 @@ EOF
 echo -e ".$username created."
 
 ## tmux configuration
-## This is .$username's tmux configuration file.
 cat > .tmux.conf <<EOF
+## This is .$username's tmux configuration file.
+
 ## General
 set -g default-terminal "screen-256color"
 set -s escape-time 0
@@ -170,7 +171,7 @@ fi
 
 ## vimrc
 cat > .vimrc <<EOF
-## This is .username's vim config file.
+## This is .$username's vim config file.
 "general
 syntax enable
 
