@@ -63,8 +63,6 @@ Detaches from the current tmux session.
 
 The vimrc generated from my script will have a customized netrw functionality similar to nerdtree. This was adapted from a blog post by George Orbo.
 
-The swp, backup, and undo files will be stored in $HOME/.vim/.swp $HOME/.vim/.backup and $HOME/.vim/.undo directories respectively.
-
 ```
 Leader + f
 ```

@@ -190,9 +190,6 @@ set nocompatible
 set viminfo='0,:0,<0,@0,f0,/0
 set backspace=indent,eol,start
 set pastetoggle=<F2>
-set directory^=$HOME/.vim/.swp//
-set backupdir^=$HOME/.vim/.backup//
-set undodir^=$HOME/.vim/.undo//
 hi vertsplit ctermfg=238 ctermbg=235
 hi LineNr ctermfg=237
 hi StatusLine ctermfg=235 ctermbg=245
@@ -310,7 +307,7 @@ nnoremap <C-w>l :ls<CR>
 "buffer deletion
 nnoremap <C-w>q :ls<CR>
 EOF
-echo -e ".vimrc created.\nEnsure that \$HOME/.vim/.swp .undo and .backup directories are created.\n"
+echo -e ".vimrc created.\n"
 
 ## Closing with sourcing the new .$username file into bashrc
 read -p "Would you like to add the .$username file to your .bashrc file? [Type YES in uppercase] " addToBashrcResponse
