@@ -186,13 +186,13 @@ set encoding=utf8
 set number
 set ruler
 set noautowrite
-set noswapfile
 set nowb
 set nobackup
 set nocompatible
 set viminfo='0,:0,<0,@0,f0,/0
 set backspace=indent,eol,start
 set pastetoggle=<F2>
+set directory^=$HOME/.vim/tmp//
 hi vertsplit ctermfg=238 ctermbg=235
 hi LineNr ctermfg=237
 hi StatusLine ctermfg=235 ctermbg=245
