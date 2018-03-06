@@ -50,7 +50,7 @@ set -s quiet on
 set -g history-limit 5000
 
 ## reload configuration
-bind r source-file /$HOME/.tmux.conf \; display 'tmux resourced!'
+bind r source-file $HOME/.tmux.conf \; display 'tmux resourced!'
 
 ## display
 set -g base-index 1
@@ -159,7 +159,7 @@ set -g @resurrect-processes 'ssh'
 set -g @ressurect-strategy-vim 'session'
 
 ##
-run-shell /$HOME/$username.tmux.ressurect/resurrect.tmux
+run-shell $HOME/$username.tmux.ressurect/resurrect.tmux
 EOF
 echo -e ".tmux.conf created."
 
@@ -317,8 +317,8 @@ read -p "Would you like to add the .$username file to your .bashrc file? [Type Y
 
 if [ "$addToBashrcResponse" == "YES" ]
 then
-	echo "source .$username" >> /$HOME/.bashrc 
-	source /$HOME/.bashrc
+	echo "source .$username" >> $HOME/.bashrc 
+	source $HOME/.bashrc
 else
 	echo -e "To make this file work, you will need to source the .$username file in your bashrc\nby adding source .$username to the end of your .bashrc file"
 fi
