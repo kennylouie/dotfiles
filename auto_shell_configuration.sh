@@ -302,7 +302,10 @@ nnoremap <C-w>< :vertical resize -5<CR>
 nnoremap <C-w>> :vertical resize +5<CR>
 
 "buffer listing
-nnoremap <Leader>ls :ls<CR>
+nnoremap <C-w>l :ls<CR>
+
+"buffer deletion
+nnoremap <C-w>q :ls<CR>
 EOF
 echo -e ".vimrc created."
 
