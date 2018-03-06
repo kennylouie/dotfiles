@@ -155,6 +155,9 @@ set -g status-right " "
 set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-processes 'ssh'
 
+## reloading vim session
+set -g @ressurect-strategy-vim 'session'
+
 ##
 run-shell /home/$USER/$username.tmux.ressurect/resurrect.tmux
 EOF
