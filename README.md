@@ -17,8 +17,6 @@ The following bash script will generate a custom bashrc script (user made, will 
 
 I like using tmux as it allows my amazon aws servers to keep running while disconnected (just like screen). However, it is very customizable. I have already added many changes (adapated from all places on the interwebs) that make this a non-standard tmux config. Overall, the commands are to match vim commands.
 
-#### 1. ctrl-b is the binding key
-
 ```
 tnew hello
 ```
@@ -77,3 +75,20 @@ Tab is the escape key. To tab, simply use
 ```
 Leader + tab
 ```
+
+```
+ctrl-w + H
+```
+Moves to the left beginning of a line.
+```
+ctrl-w + L
+```
+Moves to the end of a line.
+```
+ctrl-w + q
+```
+Deletes/closes a buffer.
+```
+ctrl-w + l
+```
+Lists all the current buffers.
