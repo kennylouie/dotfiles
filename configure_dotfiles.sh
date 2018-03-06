@@ -310,7 +310,7 @@ nnoremap <C-w>l :ls<CR>
 "buffer deletion
 nnoremap <C-w>q :ls<CR>
 EOF
-echo -e ".vimrc created."
+echo -e ".vimrc created.\nEnsure that \$HOME/.vim/.swp .undo and .backup directories are created.\n"
 
 ## Closing with sourcing the new .$username file into bashrc
 read -p "Would you like to add the .$username file to your .bashrc file? [Type YES in uppercase] " addToBashrcResponse
