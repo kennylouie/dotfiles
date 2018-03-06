@@ -1,7 +1,7 @@
 # dotfiles
 bash script to generate custom bashrc, vimrc, and tmux.conf scripts
 
-![alt text](https://user-images.githubusercontent.com/29260348/26998182-92ca9b8c-4d35-11e7-8ca4-f7f8b529cc08.png)
+![alt text](https://user-images.githubusercontent.com/29260348/37007853-41131f16-2094-11e8-9fb2-ce44ffad996e.png)
 
 ## background
 
