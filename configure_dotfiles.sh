@@ -305,7 +305,7 @@ nnoremap <C-w>< :vertical resize -5<CR>
 nnoremap <C-w>> :vertical resize +5<CR>
 
 "buffer listing
-nnoremap <C-w>l :ls<CR>
+nnoremap <C-w>a :ls<CR>
 
 "buffer deletion
 nnoremap <C-w>q :ls<CR>
