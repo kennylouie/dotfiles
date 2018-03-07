@@ -89,6 +89,6 @@ ctrl-w + q
 ```
 Deletes/closes a buffer.
 ```
-ctrl-w + l
+ctrl-w + a
 ```
 Lists all the current buffers.
