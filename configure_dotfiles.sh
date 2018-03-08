@@ -181,6 +181,7 @@ syntax enable
 filetype on
 filetype indent on
 filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 set background=dark
 set encoding=utf8
 set number
