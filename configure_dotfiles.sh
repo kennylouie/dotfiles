@@ -250,58 +250,15 @@ inoremap <Tab> <Esc>\`^
 inoremap <Leader><Tab> <Tab>
 
 "netrw
-"toggle netrw file explorer
-fun! VexToggle(dir)
-	if exists("t:vex_buf_nr")
-		call VexClose()
-	else
-		call VexOpen(a:dir)
-	endif
-endf
-fun! VexOpen(dir)
-	let g:netrw_browse_split=4
-	let vex_width = 25
-
-	execute "Vexplore " . a:dir
-	let t:vex_buf_nr = bufnr("%")
-	wincmd H
-
-	call VexSize(vex_width)
-endf
-fun! VexClose()
-	let cur_win_nr = winnr()
-	let target_nr = ( cur_win_nr == 1 ? winnr("#") : cur_win_nr )
-
-	1wincmd w
-	close
-	unlet t:vex_buf_nr
-
-	execute (target_nr - 1) . "wincmd w"
-	call NormalizeWidths()
-endf
-fun! VexSize(vex_width)
-	execute "vertical resize" . a:vex_width
-	set winfixwidth
-	call NormalizeWidths()
-endf
-fun! NormalizeWidths()
-	let eadir_pref = &eadirection
-	set eadirection=hor
-	set equalalways! equalalways!
-	let &eadirection = eadir_pref
-endf
-augroup NetrwGroup
-	autocmd! BufEnter * call NormalizeWidths()
-augroup END
-noremap <Leader>f :call VexToggle(getcwd())<CR>
-noremap <Leader>F :call VexToggle("")<CR>
-
-"Change directory to the current buffer when opening files.
-let g:netrw_liststyle = 3
-let g:netrw_banner = 0
-"let g:netrw_winsize = 25
-let g:netrw_altv = 1
-let g:netrw_list_hide='.*\.swp\$'
+inoremap <Leader>f :Vexplore<CR>
+nnoremap <Leader>f :Vexplore<CR>
+vnoremap <Leader>f :Vexplore<CR>
+onoremap <Leader>f :Vexplore<CR>
+let g:netrw_liststyle=3
+let g:netrw_banner=0
+let g:netrw_altv=1
+let g:netrw_browse_split = 4
+let g:netrw_winsize = 25
 
 "cycling through buffers
 nnoremap <C-w>H :bprevious<CR>
