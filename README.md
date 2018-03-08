@@ -61,8 +61,6 @@ Detaches from the current tmux session.
 
 ### vimrc
 
-The vimrc generated from my script will have a customized netrw functionality similar to nerdtree. This was adapted from a blog post by George Orbo.
-
 ```
 Leader + f
 ```
