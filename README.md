@@ -67,6 +67,15 @@ The vimrc generated from my script will have a customized netrw functionality si
 Leader + f
 ```
 Opens the netrw tree.
+While in netrw:
+```
+Enter
+```
+Opens file in the previous window.
+```
+v
+```
+Opens file in a vertical split. Close netrw with :q at this point and it will resize evenly.
 
 ```
 tab
