@@ -181,6 +181,7 @@ syntax enable
 filetype on
 filetype indent on
 filetype plugin on
+set smartindent
 set omnifunc=syntaxcomplete#Complete
 set background=dark
 set encoding=utf8
@@ -206,15 +207,20 @@ hi GitGutterChangeDelete ctermbg=235 ctermfg=245
 hi EndOfBuffer ctermfg=237 ctermbg=235
 
 "bracket and quotes completion
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+ inoremap {      {}<Left>
+ inoremap {<CR>  {<CR>}<Esc>O
+ inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+ 
+ inoremap        (  ()<Left>
+ inoremap (<CR>  (<CR>)<Esc>O
+ inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+ 
+ inoremap        [  []<Left>
+ inoremap [<CR>  [<CR>]<Esc>O
+ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+ 
+ inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+ inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
 
 "autcompletion
 set omnifunc=syntaxcomplete#Complete
