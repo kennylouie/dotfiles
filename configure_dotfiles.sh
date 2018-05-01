@@ -174,7 +174,7 @@ fi
 
 ## vimrc
 cat > .vimrc <<EOF
-"This is .$username's vim config file.
+"This is $username's vim config file.
 
 "general
 syntax enable
