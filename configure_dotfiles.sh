@@ -191,7 +191,7 @@ set noautowrite
 set nocompatible
 set viminfo='0,:0,<0,@0,f0,/0
 set backspace=indent,eol,start
-set pastetoggle=<F2>
+set pastetoggle=<C-B>
 set noswapfile
 hi vertsplit ctermfg=238 ctermbg=235
 hi LineNr ctermfg=237
