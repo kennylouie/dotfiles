@@ -253,12 +253,15 @@ set showmatch
 nnoremap <Leader>3 :set hlsearch!<CR>
 
 "nav shortkeys
-nnoremap <S-L> <S-\$>
 nnoremap H 0
-vnoremap <S-L> <S-\$>
 vnoremap H 0
-onoremap <S-L> <S-\$>
 onoremap H 0
+nnoremap L \$
+vnoremap L \$
+onoremap L \$
+nnoremap \$ L
+vnoremap \$ L
+onoremap \$ L
 
 "making tab escape
 nnoremap <Tab> <Esc>
