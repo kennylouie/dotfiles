@@ -205,7 +205,7 @@ hi GitGutterAdd ctermbg=235 ctermfg=245
 hi GitGutterChange ctermbg=235 ctermfg=245
 hi GitGutterDelete ctermbg=235 ctermfg=245
 hi GitGutterChangeDelete ctermbg=235 ctermfg=245
-hi EndOfBuffer ctermfg=237 ctermbg=235
+"hi EndOfBuffer ctermfg=237 ctermbg=235
 
 "bracket and quotes completion
  inoremap {      {}<Left>
