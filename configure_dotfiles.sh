@@ -208,20 +208,27 @@ hi GitGutterChangeDelete ctermbg=235 ctermfg=245
 "hi EndOfBuffer ctermfg=237 ctermbg=235
 
 "bracket and quotes completion
- inoremap {      {}<Left>
- inoremap {<CR>  {<CR>}<Esc>O
- inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
  
- inoremap        (  ()<Left>
- inoremap (<CR>  (<CR>)<Esc>O
- inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap        (  ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
  
- inoremap        [  []<Left>
- inoremap [<CR>  [<CR>]<Esc>O
- inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+inoremap        [  []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
  
- inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
- inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
+
+"automatic wrap around highlighted text
+xnoremap <leader>( xi()<Esc>P
+xnoremap <leader>" xi""<Esc>P
+xnoremap <leader>' xi''<Esc>P
+xnoremap <leader>[ xi[]<Esc>P
+xnoremap <leader>{ xi{}<Esc>P
 
 "autcompletion
 set omnifunc=syntaxcomplete#Complete
